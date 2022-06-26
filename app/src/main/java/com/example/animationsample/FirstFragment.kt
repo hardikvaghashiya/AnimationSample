@@ -3,6 +3,7 @@ package com.example.animationsample
 import android.animation.ObjectAnimator
 import android.graphics.Path
 import android.os.Bundle
+import android.os.Handler
 import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
@@ -98,12 +99,14 @@ class FirstFragment : Fragment() {
                     start()
                 }
 
-                binding.txtOne.visibility = View.VISIBLE
-                binding.txtTwo.visibility = View.VISIBLE
-                binding.txtThree.visibility = View.VISIBLE
-                binding.txtFour.visibility = View.VISIBLE
-                binding.txtFive.visibility = View.VISIBLE
-                binding.txtSix.visibility = View.VISIBLE
+                Handler().postDelayed({
+                    binding.txtOne.visibility = View.VISIBLE
+                    binding.txtTwo.visibility = View.VISIBLE
+                    binding.txtThree.visibility = View.VISIBLE
+                    binding.txtFour.visibility = View.VISIBLE
+                    binding.txtFive.visibility = View.VISIBLE
+                    binding.txtSix.visibility = View.VISIBLE
+                }, 600)
             } else {
                 firstClick = true
                 animatorTwo.reverse()
@@ -112,12 +115,14 @@ class FirstFragment : Fragment() {
                 animatorFive.reverse()
                 animatorSix.reverse()
 
-                binding.txtOne.visibility = View.GONE
-                binding.txtTwo.visibility = View.GONE
-                binding.txtThree.visibility = View.GONE
-                binding.txtFour.visibility = View.GONE
-                binding.txtFive.visibility = View.GONE
-                binding.txtSix.visibility = View.GONE
+                Handler().postDelayed({
+                    binding.txtOne.visibility = View.GONE
+                    binding.txtTwo.visibility = View.GONE
+                    binding.txtThree.visibility = View.GONE
+                    binding.txtFour.visibility = View.GONE
+                    binding.txtFive.visibility = View.GONE
+                    binding.txtSix.visibility = View.GONE
+                }, 600)
             }
         }
 
